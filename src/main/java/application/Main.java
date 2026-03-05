@@ -1,6 +1,12 @@
 package application;
 
-import application.domain.*;
+import application.domain.Person;
+import application.domain.BedRoom;
+import application.domain.Employee;
+import application.domain.Service;
+import application.domain.Guest;
+import application.domain.Booking;
+
 
 public class Main {
 
