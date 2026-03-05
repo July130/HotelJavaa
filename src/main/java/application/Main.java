@@ -1,7 +1,6 @@
 package application;
 
-import application.domain.BedRoom;
-import application.domain.Person;
+import application.domain.*;
 
 public class Main {
 
@@ -23,10 +22,28 @@ public class Main {
         */
 
         BedRoom bedRoom = new BedRoom();
-
         bedRoom.createBedRoom(bedRoom);
-
         bedRoom.getBedRoomById(1, bedRoom);
 
+
+        Service service = new Service();
+        service.createService(service);
+        service.getServiceById(1, service);
+
+
+        Guest guest = new Guest();
+        guest.createGuest(guest);
+        guest.getGuestById(1, guest);
+
+
+        Employee employee = new Employee();
+        employee.createEmployee(employee);
+        employee.getEmployeeById(1, employee);
+
+
+        Booking booking = new Booking();
+        booking.createBooking(booking);
+        booking.getBookingById(1, booking);
     }
 }
+
