@@ -1,6 +1,7 @@
 package application.userinterface;
 
 import application.domain.BedRoom;
+import application.util.FormValidationUtil;
 import application.view.BedRoomView;
 import application.view.GuestView;
 
@@ -21,9 +22,8 @@ public class MenuApp {
     public void showMainMenu(){
 
         System.out.println("Bienvenido al Hotel Java");
-        System.out.println("Presione 1 para iniciar la aplicacion");
 
-        int init = sc.nextInt();
+        int init = FormValidationUtil.validateInt("Presione 1 para iniciar la aplicacion");
         sc.nextLine();
         while(init != 0){
 
@@ -121,6 +121,7 @@ public class MenuApp {
                     break;
                 case 5:
                     System.out.println("Buscar habitaciones por id");
+                    bedRoomView.getBedRoomById();
                     break;
                 case 6:
                     System.out.println("Saliendo del menu de habitaciones");

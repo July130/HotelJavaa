@@ -3,12 +3,13 @@ package application.service.outputs;
 import application.domain.BedRoom;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface BedRoomService {
 
-    BedRoom createBedRoom(BedRoom bedRoom);
+    BedRoom createBedRoom();
     BedRoom updateBedRoom(BedRoom bedRoom);
-    BedRoom getBedRoomById(int id);
+    Optional<BedRoom> getBedRoomById(int id);
     List<BedRoom> getAllBedRooms();
     void deleteBedRoomById(int id);
 

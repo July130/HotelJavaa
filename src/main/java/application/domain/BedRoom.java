@@ -13,7 +13,7 @@ public class BedRoom {
     private String roomType;
     private BedRoomType bedRoomType;
     private double price;
-    private boolean state;
+    private String state;
 
 
     // Constructors
@@ -22,7 +22,7 @@ public class BedRoom {
 
     }
 
-    public BedRoom(int roomId, String room, String roomType,BedRoomType type,double price, boolean state) {
+    public BedRoom(int roomId, String room, String roomType,BedRoomType type,double price, String state) {
         this.roomId = roomId;
         this.room = room;
         this.roomType = roomType;
@@ -70,11 +70,11 @@ public class BedRoom {
         this.price = price;
     }
 
-    public boolean isState() {
+    public String getState() {
         return state;
     }
 
-    public void setState(boolean state) {
+    public void setState(String state) {
         this.state = state;
     }
 
@@ -110,7 +110,7 @@ public class BedRoom {
         sc.nextLine();
 
         System.out.println("Seleccione el estado de la habitación");
-        boolean state = sc.nextBoolean();
+        String state = sc.nextLine();
         bedRoom.state = state;
 
 

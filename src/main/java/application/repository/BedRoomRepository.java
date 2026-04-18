@@ -3,6 +3,7 @@ package application.repository;
 import application.domain.BedRoom;
 import application.domain.BedRoomType;
 import application.domain.enums.BedRoomEnums;
+import application.domain.enums.BedRoomState;
 import application.service.ports.BedRoomRepositoryPort;
 
 import java.util.ArrayList;
@@ -15,12 +16,12 @@ public class BedRoomRepository implements BedRoomRepositoryPort {
 
     List<BedRoom> bedRooms = new ArrayList<>(
             Arrays.asList(
-                    new BedRoom(1, "201", BedRoomEnums.INDIVIDUAL.getDescription(), new BedRoomType(1,"Indivual"),120000, true ),
-                    new BedRoom(2, "202", BedRoomEnums.DOBLE.getDescription(), new BedRoomType(1,"Doble"),180000, true ),
-                    new BedRoom(3, "203", BedRoomEnums.SUITE.getDescription(), new BedRoomType(1,"Suite"),240000, true )
-            )
+                    new BedRoom(1, "201", BedRoomEnums.INDIVIDUAL.getDescription(), new BedRoomType(1,"Indivual"),120000, BedRoomState.DISPONIBLE.getDescription()),
+                    new BedRoom(2, "202", BedRoomEnums.DOBLE.getDescription(), new BedRoomType(1,"Doble"),180000, BedRoomState.OCUPADA.getDescription() ),
+                    new BedRoom(3, "203", BedRoomEnums.SUITE.getDescription(), new BedRoomType(1,"Suite"),240000, BedRoomState.RESERVADA.getDescription())
 
-    );
+
+            ));
 
     public BedRoom saveBedRoom(BedRoom bedRoom){
 
@@ -52,7 +53,7 @@ public class BedRoomRepository implements BedRoomRepositoryPort {
     public List<BedRoom> findAllBedRooms() {
 
         for (BedRoom bedroom : bedRooms) {
-            System.out.println(bedroom.getRoomId() + " " + bedroom.getRoom() + " " + bedroom.getRoomType() + " " + bedroom.getPrice() + " " + bedroom.isState());
+            System.out.println(bedroom.getRoomId() + " " + bedroom.getRoom() + " " + bedroom.getRoomType() + " " + bedroom.getPrice() + " " + bedroom.getState());
         }
         return bedRooms;
 
@@ -73,7 +74,7 @@ public class BedRoomRepository implements BedRoomRepositoryPort {
                 bedRooms.remove(bedroom);
                 System.out.println("Habitacion con id " + id + " ha sido eliminada.");
                 for (BedRoom bedroom1 : bedRooms) {
-                    System.out.println(bedroom1.getRoomId() + " " + bedroom1.getRoom() + " " + bedroom1.getRoomType() + " " + bedroom1.getPrice() + " " + bedroom1.isState());
+                    System.out.println(bedroom1.getRoomId() + " " + bedroom1.getRoom() + " " + bedroom1.getRoomType() + " " + bedroom1.getPrice() + " " + bedroom1.getState());
                 }
                 return;
             }
