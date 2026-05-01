@@ -82,34 +82,17 @@ public class Person {
         this.state = state;
     }
 
-    // Class Methods
-
-    public Person createUser(Person person){
-
-
-        return person;
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", state=" + state +
+                '}';
     }
-
-
-    public Person updateUser(Person person){
-
-
-        return person;
-    }
-
-    public List<Person> getUsers(){
-        return null;
-    }
-
-    public Person getUserById(int id){
-        return null;
-    }
-
-    public void deleteUser(int id){
-
-        }
-
-
 
 
 }

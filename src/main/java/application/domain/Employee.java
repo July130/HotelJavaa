@@ -55,6 +55,20 @@ public class Employee{
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+public class Employee extends Person{
+
+    private String position;
+    private double salary;
+
+    public Employee(){
+
+        super();
+    }
+
+    public Employee(int id, String name, String lastName, String email, String password, Boolean state, String position, double salary) {
+        super(id, name, lastName, email, password, state);
+        this.position = position;
+        this.salary = salary;
     }
 
     public String getPosition() {
@@ -120,5 +134,11 @@ public class Employee{
         } else {
             System.out.println("Valide el id del empleado que está consultando");
         }
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "position='" + position + '\'' +
+                ", salary=" + salary +
+                '}';
     }
 }

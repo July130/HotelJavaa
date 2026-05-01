@@ -5,14 +5,16 @@ import application.domain.BedRoom;
 import application.domain.Employee;
 import application.domain.Service;
 import application.domain.Guest;
-import application.domain.Booking;
 
+
+import application.configuration.Config;
+import application.userinterface.MenuApp;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Person person = new Person("jd@med.com");
+        MenuApp menuApp = Config.createMenuApp();
 
         /*
         person.setId(1);
@@ -30,6 +32,7 @@ public class Main {
         BedRoom bedRoom = new BedRoom();
         bedRoom.createBedRoom(bedRoom);
         bedRoom.getBedRoomById(1, bedRoom);
+       menuApp.showMainMenu();
 
 
         Service service = new Service();
